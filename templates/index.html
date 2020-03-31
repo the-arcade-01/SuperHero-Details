@@ -3,8 +3,8 @@
     Bands of Baboons
 {%endblock%}
 {%block content%}
-<div class="container h-100 d-flex justify-content-center">
-    <h1>Type in your super hero</h1>
+<div class="container h-100 d-flex justify-content-center" style="height:300px">
+    <h3>Type in your super hero</h3>
     <form action='/' method='POST' class='form-inline'>
         <input type='text' name='typehero' class='form-control mr-sm-2'>
         <input type="submit" value="GO" class="btn btn-outline-dark my-2 my-sm-0">
@@ -18,6 +18,20 @@
 <div class="container h-100 d-flex justify-content-left">
     {%if image%}
         <img src={{image}}>
+    {%endif%}
+</div>
+<div class="w3-display-right w3-padding">
+    {%if biography%}
+        <h3>Full Name : {{biography['full-name']}}</h3><br>
+        <h3>Aliases :</h3>
+        {% for item in biography['aliases']%}
+        <ul>
+            <li><h4>{{item}}</h4></li>
+        </ul>
+        {%endfor%}
+        <br>
+        <h3>First Appearance : {{biography['first-appearance']}}</h3><br>
+        <h3>Publisher : {{biography['publisher']}}</h3><br>
     {%endif%}
 </div>
 {%endblock%}

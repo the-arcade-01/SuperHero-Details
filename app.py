@@ -17,7 +17,8 @@ def index():
         results = data['results'][0]
         name = results['name']
         image = results['image']['url']
-        return render_template('index.html',name = name,image = image)
+        biography = results['biography']
+        return render_template('index.html',name = name,image = image,biography = biography)
     else:
         return render_template('index.html')
 
