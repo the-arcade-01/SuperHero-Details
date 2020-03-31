@@ -14,8 +14,9 @@ dict_powerstats = {}
 for item in results['powerstats']:
     dict_powerstats[item] = int(results['powerstats'][item])
 biography = results['biography']
-print(biography)
-print(type(biography))
+# print(biography)
+# print(type(biography))
+print(dict_powerstats)
 # print(dict_powerstats)
 # print(results['powerstats'])
 # print(results['biography'])
