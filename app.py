@@ -15,9 +15,11 @@ def index():
         r = requests.get(base_url)
         data = r.json()
         results = data['results'][0]
-        return render_template('index.html',name = results['name'])
+        name = results['name']
+        image = results['image']['url']
+        return render_template('index.html',name = name,image = image)
     else:
-        return render_template('index.html',name = '')
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
