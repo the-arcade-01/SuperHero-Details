@@ -26,9 +26,12 @@ def index():
         image = results['image']['url']
         biography = results['biography']
         powerstats = results['powerstats']
-
+        if len(biography['aliases']) >= 5:
+            alias = biography['aliases'][:5]
+        else:
+            alias = biography['aliases']
         # returning a render_template
-        return render_template('index.html',name = name,image = image,biography = biography,powerstats = powerstats)
+        return render_template('index.html',name = name,image = image,biography = biography,powerstats = powerstats,alias = alias)
     else:
         return render_template('index.html')
 
